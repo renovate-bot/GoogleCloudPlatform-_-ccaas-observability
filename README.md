@@ -120,6 +120,18 @@ project, typically including:
 *   `monitoring.dashboards.update`
 *   Roles like `logging.admin` and `monitoring.admin` usually suffice.
 
+## Disclaimer
+
+This is not an officially supported Google product. This project is not eligible for the [Google Open Source Software Vulnerability Rewards Program](https://bughunters.google.com/open-source-security).
+
+## Terms of Service
+
+Usage of this toolkit is subject to the following terms:
+
+*   [Google Cloud Platform Terms of Service](https://cloud.google.com/terms/)
+*   [Service Specific Terms](https://cloud.google.com/terms/service-terms)
+*   [Cloud Observability SLA](https://cloud.google.com/operations/sla)
+
 ## Contributing
 
 Contributions are welcome! Please submit a pull request with your desired
