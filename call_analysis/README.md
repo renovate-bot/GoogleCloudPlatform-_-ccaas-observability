@@ -103,12 +103,12 @@ The scripts utilize `gcloud` commands and Google Cloud APIs to gather logs based
 
 1.  **Fetch all logs for a call:**
     ```bash
-    python3 get_all_call_logs.py \\
-      --contact_center_project_id your-cc-project-id \\
-      --contact_center_id your-contact-center-id \\
-      --virtual_agent_project_id your-va-project-id \\
-      --call_id 1106 \\
-      --lookback 60 \\
+    python3 get_all_call_logs.py \
+      --contact_center_project_id your-cc-project-id \
+      --contact_center_id your-contact-center-id \
+      --virtual_agent_project_id your-va-project-id \
+      --call_id 1106 \
+      --lookback 60 \
       --include_activity
     ```
     This will create a file named `call_1106_all_logs.json`.
@@ -141,8 +141,8 @@ The scripts utilize `gcloud` commands and Google Cloud APIs to gather logs based
 
 2.  **Generate the timeline chart:**
     ```bash
-    python3 generate_call_timeline.py \\
-      --in_file call_1106_all_logs.json \\
+    python3 generate_call_timeline.py \
+      --in_file call_1106_all_logs.json \
       --call_id 1106
     ```
     This will create a file named `call_1106_timeline.md` containing the Mermaid diagram.
