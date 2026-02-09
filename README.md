@@ -105,9 +105,28 @@ terraform destroy
 1.  Edit the `*.tf` files within the `modules/` subdirectories to change
     metrics, widgets, or layouts.
 2.  Run `terraform plan` to see the proposed changes.
+\
 3.  Run `terraform apply` to apply the changes.
 
+## Call Analysis Scripts
+
+Beyond the Terraform-managed dashboards, this repository also includes a set of Python scripts in the `call_analysis/` directory. These scripts are designed to help developers and support engineers fetch, correlate, and visualize call logs from Contact Center AI Platform (CCAIP) and Dialogflow CX.
+
+**Key features:**
+
+*   Fetch logs from CCAIP and Dialogflow based on Call IDs.
+*   Automatically map CCAIP Call IDs to Dialogflow Conversation IDs.
+*   Generate Mermaid Gantt charts to visualize the timeline of call events, making it easier to troubleshoot and understand call flows.
+
+For detailed usage and examples, please refer to the `README.md` within the `call_analysis/` directory.
+
+**Typical Workflow:**
+
+1.  Use `call_analysis/get_all_call_logs.py` to gather combined logs for a specific call.
+2.  Use `call_analysis/generate_call_timeline.py` to create a visual timeline from the logs.
+
 ## Permissions
+
 
 The account used to run Terraform needs sufficient permissions in the target
 project, typically including:
