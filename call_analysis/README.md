@@ -14,8 +14,8 @@ The scripts utilize `gcloud` commands and Google Cloud APIs to gather logs based
 
 *   **Purpose:** Fetches CCAIP logs for a specific call within a given contact center instance. It first searches for logs matching the `call_id` to deduce the `session_id`, and then fetches all logs associated with that `session_id`.
 *   **Arguments:**
-    *   `--contact_center_project_id` (Required): GCP Project ID where the Contact Center logs reside.
-    *   `--contact_center_id` (Required): The ID of the Contact Center instance (e.g., `your-contact-center-id`). This is used to filter `resource.labels.resource_id`.
+    *   `--contact_center_project_id` (Required): Google CCaaS project ID.
+    *   `--contact_center_id` (Required): The identifier that shows in a contact center details page in the Cloud Console at the top of the page (e.g., `e5361509-c230-46e7-a41d-de26d7f9a003`) or in the URL (e.g., `https://console.cloud.google.com/contact-center-ai-platform/instances/<LOCATION>/<CONTACT_CENTER_ID>?project=<PROJECT>`).
     *   `--call_id` (Required): The numeric part of the Call ID to trace (e.g., `1106`).
     *   `--lookback` (Optional): Lookback period in minutes. Default: `180`.
     *   `--include_activity` (Optional): Flag to include `contactcenteraiplatform.googleapis.com%2Factivity` logs. Default: False (only includes `...%2Fevents`).
@@ -54,8 +54,8 @@ The scripts utilize `gcloud` commands and Google Cloud APIs to gather logs based
 
 *   **Purpose:** Orchestrates fetching logs from both CCAIP and Dialogflow for a given Call ID, combines them, and saves them to a file.
 *   **Arguments:**
-    *   `--contact_center_project_id` (Required): GCP Project ID for Contact Center logs.
-    *   `--contact_center_id` (Required): The ID of the Contact Center instance.
+    *   `--contact_center_project_id` (Required): Google CCaaS project ID.
+    *   `--contact_center_id` (Required): The identifier that shows in a contact center details page in the Cloud Console at the top of the page (e.g., `e5361509-c230-46e7-a41d-de26d7f9a003`) or in the URL (e.g., `https://console.cloud.google.com/contact-center-ai-platform/instances/<LOCATION>/<CONTACT_CENTER_ID>?project=<PROJECT>`).
     *   `--virtual_agent_project_id` (Optional): GCP Project ID for Dialogflow logs. Defaults to `contact_center_project_id`.
     *   `--call_id` (Required): The numeric part of the Call ID to trace.
     *   `--lookback` (Optional): Lookback period in minutes for log queries. Default: `60`.
@@ -93,7 +93,7 @@ The scripts utilize `gcloud` commands and Google Cloud APIs to gather logs based
 *   **`helpers/find_recent_call_ids.py`:**
     *   **Purpose:** Quickly finds and lists recent Call IDs from CCAIP event logs.
     *   **Arguments:**
-        *   `--contact_center_project_id` (Required): GCP Project ID.
+        *   `--contact_center_project_id` (Required): Google CCaaS project ID.
         *   `--lookback` (Optional): Lookback period in minutes. Default: `60`.
     *   Displays Call ID, customer domain prefix, and contact center ID.
 
