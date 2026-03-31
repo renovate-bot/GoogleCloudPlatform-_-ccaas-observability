@@ -42,7 +42,7 @@ resource "google_monitoring_dashboard" "calls" {
                                             "crossSeriesReducer": "REDUCE_SUM",
                                             "perSeriesAligner": "ALIGN_DELTA"
                                         },
-                                        "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_established\" resource.type=\"logging_bucket\""
+                                        "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_established_v2\" resource.type=\"logging_bucket\""
                                     }
                                 }
                             },
@@ -58,7 +58,23 @@ resource "google_monitoring_dashboard" "calls" {
                                             "crossSeriesReducer": "REDUCE_SUM",
                                             "perSeriesAligner": "ALIGN_DELTA"
                                         },
-                                        "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_failed\" resource.type=\"logging_bucket\""
+                                        "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_failed_v2\" resource.type=\"logging_bucket\""
+                                    }
+                                }
+                            },
+                            {
+                                "legendTemplate": "Deflected",
+                                "minAlignmentPeriod": "300s",
+                                "plotType": "LINE",
+                                "targetAxis": "Y1",
+                                "timeSeriesQuery": {
+                                    "timeSeriesFilter": {
+                                        "aggregation": {
+                                            "alignmentPeriod": "300s",
+                                            "crossSeriesReducer": "REDUCE_SUM",
+                                            "perSeriesAligner": "ALIGN_DELTA"
+                                        },
+                                        "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_deflected_v2\" resource.type=\"logging_bucket\""
                                     }
                                 }
                             },
@@ -90,7 +106,7 @@ resource "google_monitoring_dashboard" "calls" {
                                             "crossSeriesReducer": "REDUCE_SUM",
                                             "perSeriesAligner": "ALIGN_DELTA"
                                         },
-                                        "filter": "metric.type=\"logging.googleapis.com/user/ccaas_stream_errors\" resource.type=\"logging_bucket\""
+                                        "filter": "metric.type=\"logging.googleapis.com/user/ccaas_streaming_errors_v2\" resource.type=\"logging_bucket\""
                                     }
                                 }
                             }
@@ -123,7 +139,7 @@ resource "google_monitoring_dashboard" "calls" {
                                     "crossSeriesReducer": "REDUCE_SUM",
                                     "perSeriesAligner": "ALIGN_DELTA"
                                 },
-                                "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_established\" resource.type=\"logging_bucket\""
+                                "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_established_v2\" resource.type=\"logging_bucket\""
                             }
                         }
                     },
@@ -146,7 +162,7 @@ resource "google_monitoring_dashboard" "calls" {
                                     "crossSeriesReducer": "REDUCE_SUM",
                                     "perSeriesAligner": "ALIGN_SUM"
                                 },
-                                "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_established\" resource.type=\"logging_bucket\""
+                                "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_established_v2\" resource.type=\"logging_bucket\""
                             }
                         }
                     },
@@ -183,7 +199,7 @@ resource "google_monitoring_dashboard" "calls" {
                                     "crossSeriesReducer": "REDUCE_SUM",
                                     "perSeriesAligner": "ALIGN_SUM"
                                 },
-                                "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_failed\" resource.type=\"logging_bucket\""
+                                "filter": "metric.type=\"logging.googleapis.com/user/ccaas_calls_failed_v2\" resource.type=\"logging_bucket\""
                             }
                         }
                     },
