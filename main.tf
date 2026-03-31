@@ -30,3 +30,8 @@ module "df_dashboard" {
   source     = "./modules/df_dashboard"
   project_id = var.project_id
 }
+
+module "ccaas_errors_dashboard" {
+  source     = "./modules/errors_dashboard"
+  project_id = var.project_id
+}
